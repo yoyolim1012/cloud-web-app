@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hangman Game</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!--background music-->
+  <audio id="bgm" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+</head>
+
+<body>
+  <h1>🎮 Hangman Game</h1>
+  <p>Choose a categories to start the game：</p>
+
+  <!--Category-->
+  <select id="category">
+    <option value="fruits">Fruits</option>
+    <option value="animals">Animals</option>
+    <option value="countries">Countries</option>
+  </select>
+  <button onclick="startGame()">Start</button>
+
+  <!--Game-->
+  <div id="game" style="display:none;">
+    <p id="word">_ _ _ _ _</p>
+    <p>Lives：<span id="lives">6</span></p> 
+    <input type="text" id="guess" maxlength="1" placeholder="Enter a letter (a-z)">
+    <button onclick="checkGuess()">Submit</button>
+    <button onclick="restartGame()">Restart</button>
+    <p>Guessed Letters: <span id="guessedLetters"></span></p>
+    <p id="message"></p>
+    
+    <!--Stickman-->
+    <canvas id="hangmanCanvas" width="200" height="200"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
